@@ -1,0 +1,84 @@
+body{
+    background: white;
+    font: Arial;
+    
+}
+.body{
+    overflow-x: hidden;
+}
+.font{
+    font-size: 15px;
+}
+
+nav{
+    color:#fff;
+   
+    justify-content: space-around;
+}
+ li {
+   
+    justify-content: space-around;
+}
+.hover{
+    
+    border-bottom: floralwhite 2px solid;
+}
+.alert{
+    margin-bottom: 0px;
+}
+.footer{
+    height:91px;
+    background-color: black;
+    color:white;
+}
+.footer-register{
+    margin-top: 30px;
+    height:91px;
+    background-color: black;
+    color:white;
+    
+}
+.form-container{
+    
+    height:400px;
+    width:100%;
+}
+
+.data{
+    margin-top: 180px;
+}
+.data-register{
+    margin-top:47px;
+}
+.data-login{
+    margin-top:80px;
+    margin-bottom: 75px;
+}
+.content-myurl{
+    height:550px;
+}
+.imoji{
+    font-size: 200px;
+}
+@media screen and (max-width: 768px) {
+    #longurl {
+        margin-bottom: 10px;
+        
+      
+    }
+    #shorturl {
+        margin-bottom: 10px;
+    }
+    .font{
+        font-size: 12px;
+    }
+   
+ 
+  }
+  @media screen and (max-width: 1000px) {
+    .hover{
+    
+        border-bottom: floralwhite 0px solid;
+    }
+
+  }

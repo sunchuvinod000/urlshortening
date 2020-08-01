@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <metacharset="UTF-8">
+        <meta name="viewport" content="device-width, initial-scale=1.0">
+        <title>URL shortener</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
+        <a class="navbar-brand " href="#">
+            <h1>URL Stortener</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mr-5 ">
+                <li class="nav-item ">
+                    <a class="nav-link ml-4 h6 mr-4 " href="/">Home</a>
+                </li>
+                <li class="nav-item  ">
+                    <a class="nav-link ml-4 h6 mr-4" href="/myurls">My Url</a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link ml-4 h6 mr-4 hover" href="/login">login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link ml-4 h6 mr-4" href="/register">register</a>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </nav>
+    <div class="container mt-4 row  ">
+        <div class="card data-login col-sm-12 offset-sm-3 col-md-8 offset-md-4 col-md-7 offset-1 shadow">
+            <div calss="">
+                <center>
+                    <h1 class="text-primary">Login form</h1>
+                </center>
+            </div>
+            <div class="card-body">
+                <form action="/auth/login" method="POST">
+
+                    <div class="form-group">
+                        <label for="email">Enter mail</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="someone@gmail.com"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="password"
+                            required>
+
+                    </div>
+                    {{#if message}}
+                    <p class="alert alert-danger mt-2 text-center">{{message}}</p>
+                    {{/if}}
+                    <div class="row">
+                        <div class="offset-5 col-sm-1 col-2">
+                            <button type="submit" class="btn btn-primary">Login</button>
+
+                        </div>
+
+                    </div><br>
+                    <div class="row">
+                        <div class="offset-5">
+                            <p>New User? <a href="/register">register</a></p>
+
+                        </div>
+                    </div>
+
+                </form>
+
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <div class="footer-register fixed-bottom">
+        <center> &copy;2020 Copyrights: <a href="" class="text-white"> Sunchu Vinod</a></center>
+    </div>
+
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</html>

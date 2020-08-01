@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <metacharset="UTF-8">
+        <meta name="viewport" content="device-width, initial-scale=1.0">
+        <title>URL shortener</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+    {{{element}}}
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
+        <a class="navbar-brand " href="#">
+            <h1>URL Stortener</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mr-5 ">
+                <li class="nav-item active ">
+                    <a class="nav-link ml-4 h6 mr-4 hover" href="/">Home</a>
+                </li>
+                <li class="nav-item  ">
+                    <a class="nav-link ml-4 h6 mr-4" href="/myurls">My Url</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-4 h6 mr-4 " href="/login">login</a>
+                </li>
+
+                <li class="nav-item  ">
+                    <a class="nav-link ml-4 h6 mr-4" href="/register">register</a>
+                </li>
+
+
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="container  form-container">
+        <div class="offset-2 data">
+            <form action="/auth/shorten" method="POST">
+                <div class="row">
+                    <p class="h3">Enter the url</p>
+                </div>
+                <div class="row">
+                    <input type="text" name="longurl" id="longurl" placeholder="Enter the long url here"
+                        class="col-10  col-md-7 form-control ">
+                    <button type="submit" class="btn ml-1 btn-primary col-3 col-md-2">Shorten</button>
+                </div>
+                <p class="text-danger">{{invalidurl}}</p>
+
+            </form>
+            <div class="row mt-3">
+                <p class="h4">Copy the shortened url</p>
+            </div>
+            <div class="row ">
+                <input type="text" name="shorturl" id="shorturl" class="col-10  col-md-7 form-control  "
+                    value='{{shorturl}}'>
+                <button class="btn ml-1 btn-primary col-3 col-md-2" onclick="copy()">click to copy</button>
+            </div>
+               <p class="text-danger">{{serverproblem}}</p>
+        </div>
+     
+    </div>
+
+    <div class="footer fixed-bottom">
+        <center> &copy;2020 Copyrights: <a href="https://bit.ly/3327ZF5" target="blank" class="text-white"> Sunchu Vinod</a></center>
+    </div>
+</body>
+<script>
+
+
+    function copy() {
+
+        var copyText = document.getElementById("shorturl");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        alert("Copied the text: " + copyText.value);
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</html>
