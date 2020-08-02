@@ -5,10 +5,10 @@ const dotenv = require('dotenv');
 
 
 const db = mysql.createConnection({
-    host: "us-cdbr-east-02.cleardb.com",
-    user: "b561ea51eefd5e",
-    password: "8e65fefb",
-    database: "heroku_e17c1b299b2f407"
+    host: "nnmeqdrilkem9ked.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    user: "tkuxmzjnmcagk6tk",
+    password: "ehuksxoopbhg3gys",
+    database: "suwdt6giiu8qz4aa"
 
 });
 
@@ -32,16 +32,15 @@ router.get('/myurls', (req,res) =>{
     }else{
     db.query('select long_url,short_url from users_urls where email=?',[req.cookies.email],(error,result) =>{
         
-        if(result.length>0){
+        if(error){
+            console.log(error);}
+        else{
             res.render('myurls',{
                 result: result,
                 logout: '<div class="row justify-content-center mt-5"><form action="/auth/logout" method="GET"><button type="submit" class="btn btn-primary">Logout</button></form></div>',
-                bottom: 'fixed-bottom'
-            })
-        }else{
-            res.render('myurls',{
-               nourls: '<div class="row justify-content-center mt-5"><strong class="text-danger h1">It looks like you have not generated any urls <br> <center> :)</center> </strong></div>' ,
-               bottom: 'fixed-bottom'
+                bottom: 'fixed-bottom',
+                nourls: '<div class="row justify-content-center mt-5"><strong class="text-danger h1">It looks like you have not generated any urls <br> <center> :)</center> </strong></div>' ,
+
             })
         }
        

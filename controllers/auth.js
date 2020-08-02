@@ -1,18 +1,30 @@
-const mysql = require('mysql');
 
+const mysql = require('mysql');
 const bcrypt = require('bcryptjs');
 const dotenv = require('dotenv');
 const tinyurl = require('tinyurl');
 var validate = require('url-validator');
 
 
-const db = mysql.createConnection({
-    host: "us-cdbr-east-02.cleardb.com",
-    user: "b561ea51eefd5e",
-    password: "8e65fefb",
-    database: "heroku_e17c1b299b2f407"
+const db = mysql.createPool({
+    host: "nnmeqdrilkem9ked.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    user: "tkuxmzjnmcagk6tk",
+    password: "ehuksxoopbhg3gys",
+    database: "suwdt6giiu8qz4aa"
 
 });
+db.getConnection((error,connection) =>{
+    try{
+        if(connection){
+            connection.release();
+        }
+
+    }
+    catch(error){
+        console.log(error);
+    }
+})
+
 exports.shorten = (req, res) => {
     const mail = req.cookies.email;
 
