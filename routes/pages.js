@@ -29,7 +29,7 @@ router.get('/myurls', (req,res) =>{
         res.render('myurls', {
             notlogin :'<div class="content-myurl "><div class=" justify-content-center row"><i class="fa fa-frown-o imoji text-danger" aria-hidden="true"></i></div> <div class="row justify-content-center"><p class="h3 "><strong>You are not logged in...</strong></p></div></div>'
         });
-    }
+    }else{
     db.query('select long_url,short_url from users_urls where email=?',[req.cookies.email],(error,result) =>{
         
         if(result.length>0){
@@ -47,6 +47,7 @@ router.get('/myurls', (req,res) =>{
        
 
     });
+}
 });
 
 
