@@ -4,13 +4,13 @@ const bcrypt = require('bcryptjs');
 const dotenv = require('dotenv');
 const tinyurl = require('tinyurl');
 var validate = require('url-validator');
-dotenv.config({ path: './.env' });
+
 
 const db = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE
+    host: "us-cdbr-east-02.cleardb.com",
+    user: "b561ea51eefd5e",
+    password: "8e65fefb",
+    database: "heroku_e17c1b299b2f407"
 
 });
 exports.shorten = (req, res) => {

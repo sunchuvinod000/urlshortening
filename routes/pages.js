@@ -2,13 +2,13 @@ const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');
 const dotenv = require('dotenv');
-dotenv.config({ path: './.env' });
+
 
 const db = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE
+    host: "us-cdbr-east-02.cleardb.com",
+    user: "b561ea51eefd5e",
+    password: "8e65fefb",
+    database: "heroku_e17c1b299b2f407"
 
 });
 
@@ -35,8 +35,8 @@ router.get('/myurls', (req,res) =>{
         if(result.length>0){
             res.render('myurls',{
                 result: result,
-                logout: '<div class="row justify-content-center mt-5"><form action="/auth/logout" method="GET"><button type="submit" class="btn btn-primary">Logout</button></form></div>'
-                
+                logout: '<div class="row justify-content-center mt-5"><form action="/auth/logout" method="GET"><button type="submit" class="btn btn-primary">Logout</button></form></div>',
+                bottom: 'fixed-bottom'
             })
         }else{
             res.render('myurls',{
