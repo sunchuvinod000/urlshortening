@@ -49,11 +49,12 @@
     {{#if notlogin}}
     {{{notlogin}}}
     {{/if}}
-    {{{nourls}}}
+   
     
     <div class="row m-2 justify-content-center font">
-
+        {{#if result}}
         <ul class="list-group">
+       
             {{#each result}}
             <li class="list-group-item mt-2 ">
                 {{#each this as |value key|}}
@@ -62,7 +63,11 @@
             </li>
             {{/each}}
         </ul>
+        {{#else}}
+          {{{nourls}}}
+        {{/if}}
 
+         
     </div>
     {{{logout}}}
     
