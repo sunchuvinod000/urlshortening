@@ -52,10 +52,10 @@
                 <div class="row">
                     <p class="h3">Enter the url</p>
                 </div>
-                <div class="row">
+                <div class="row space-between">
                     <input type="text" name="longurl" id="longurl" placeholder="Enter the long url here"
                         class="col-10  col-md-7 form-control ">
-                    <button type="submit" class="btn ml-1 btn-primary col-3 col-md-2">Shorten</button>
+                    <button type="submit" class="btn ml-1 btn-primary col-5 col-md-2">Shorten</button>
                 </div>
                 <p class="text-danger">{{invalidurl}}</p>
 
@@ -66,14 +66,14 @@
             <div class="row ">
                 <input type="text" name="shorturl" id="shorturl" class="col-10  col-md-7 form-control  "
                     value='{{shorturl}}'>
-                <button class="btn ml-1 btn-primary col-3 col-md-2" onclick="copy()">click to copy</button>
+                <button class="btn ml-1 btn-primary col-5 col-md-2" onclick="copy()">click to copy</button>
             </div>
                <p class="text-danger">{{serverproblem}}</p>
         </div>
      
     </div>
 
-    <div class="footer fixed-bottom">
+    <div class="footer ">
         <center> &copy;2020 Copyrights: <a href="https://bit.ly/3327ZF5" target="blank" class="text-white"> Sunchu Vinod</a></center>
     </div>
 </body>

@@ -27,7 +27,7 @@ nav{
     margin-bottom: 0px;
 }
 .footer{
-    height:91px;
+    height:93px;
     background-color: black;
     color:white;
 }
@@ -47,6 +47,7 @@ nav{
 .data{
     margin-top: 180px;
 }
+
 .data-register{
     margin-top:47px;
 }
@@ -73,7 +74,20 @@ nav{
         font-size: 12px;
     }
    
+    .form-container{
+    
+        height:325px;
+        width:100%;
+    }
+    .data{
+        margin-top: 100px;
+       
+    }
+
  
+  }
+  @media screen and (max-width: 450px){
+      
   }
   @media screen and (max-width: 1000px) {
     .hover{

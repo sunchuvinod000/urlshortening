@@ -6,9 +6,6 @@ const cookieParser = require('cookie-parser');
 const fileRoute = require('./routes/pages');
 const authRoute = require('./routes/auth');
 
-
-dotenv.config({ path: './.env' })
-
 const app = express();
 
 
